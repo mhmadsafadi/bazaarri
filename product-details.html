@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/fontawesome.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="css/star-rating-svg.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    
+    <title>Product Details</title>
+</head>
+<body>
+
+    <section class="product-details">
+
+        <div class="container">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb pl-0">
+                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                    <li class="breadcrumb-item"><a href="#">All Categories</a></li>
+                    <li class="breadcrumb-item"><a href="#">Electronics</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Camera, Photo & Accessories</li>
+                </ol>
+            </nav>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-6">
+                    <div class="image-container">
+                        <div class="small-image">
+                            <img src="images/canon-1.png" alt=".." class="img-thumbnail">
+                            <img src="images/canon-2.png" alt=".." class="img-thumbnail">
+                            <img src="images/canon-3.png" alt=".." class="img-thumbnail">
+                            <img src="images/canon-4.png" alt=".." class="img-thumbnail">
+                            <img src="images/canon-5.png" alt=".." class="img-thumbnail">
+                        </div>
+                        <div class="big-image">
+                            <img src="images/canon-1.png" id="zoom" alt="...">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="details py-2">
+                        <p class="title">
+                            Pixel Vertax MB-D18 Battery Grip Work with EN-EL15a/EN-EL15 Battery Balancing and Anti-shake for Nikon D850 Camera DSLR.
+                        </p>
+                        <div class="d-flex align-items-center justify-content-between">
+                            <div>
+                                <span class="read-rating" data-rating="4.5"></span>
+                                <span class="pro-review pl-2"><a href="#">56 product review</a></span>
+                            </div>
+                            <span class="sold-red">4,138 sold</span>
+                        </div>
+                        <hr>
+                        <div class="d-flex justify-content-between" style="font-size: 14px;">
+                            <span>Type of product: New Product</span>
+                            <span>Type of sale: Wholesale & Retail</span>
+                        </div>
+                        <hr>
+                        
+                        <div class="input-group">
+                            <div id="radioBtn">
+                                <a class="btn active" data-toggle="price" data-title="Y">
+                                    <span>1-4 Pieces</span>
+                                    $150.00
+                                </a>
+                                <a class="btn notActive" data-toggle="price" data-title="N">
+                                    <span>5-19 Pieces</span>
+                                    $148.00
+                                </a>
+                                <a class="btn notActive" data-toggle="price" data-title="s">
+                                    <span>>= 20 Pieces</span>
+                                    $140.00
+                                </a>
+                            </div>
+                            <input type="hidden" name="price" id="price">
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+    
+
+
+
+    <script src="js/jquery.js"></script>
+    <script src="js/popper.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.star-rating-svg.js"></script>
+    <script src="js/zoom.min.js"></script>
+        <script>
+            $(document).ready(function(){
+                $('.small-image img').click(function(){
+                    var image = $(this).attr('src');
+                    $('.big-image img').attr('src', image);
+                });
+
+                $('#zoom').imagezoomsl({});
+
+                $(".read-rating").starRating({
+                    starSize: 20,
+                    starShape: 'rounded',
+                    readOnly: true
+                });
+
+                $('#radioBtn a').on('click', function(){
+                    var sel = $(this).data('title');
+                    var tog = $(this).data('toggle');
+                    $('#'+tog).prop('value', sel);
+                    $('a[data-toggle="'+tog+'"]').not('[data-title="'+sel+'"]').removeClass('active').addClass('notActive');
+                    $('a[data-toggle="'+tog+'"][data-title="'+sel+'"]').removeClass('notActive').addClass('active');
+                });
+            });
+        </script>
+</body>
+</html>
+
