@@ -24,9 +24,12 @@ body{
     border-left: 1px solid rgba(221, 221, 221, 0.685);
     height: 100%;
 }
-.top-nav .icons-nav .far ,
-.top-nav .icons-nav .fas{
-    padding-left: 15px;
+.top-nav .icons-nav .bi {
+    margin-left: 15px;
+}
+.top-nav .icons-nav .bi:hover {
+    color: var(--orange);
+    cursor: pointer;
 }
 .flag-icon-us {
     background-image: url(../images/amireca.svg);
@@ -214,7 +217,7 @@ body{
 .navbar .dropdown .btn-menu-category:focus{
     box-shadow: none;
 }
-.navbar .dropdown .dropdown-menu{
+.navbar .dropdown .tap-dropdown{
     width: 300px;
 }
 .navbar .dropdown .dropdown-menu .dropdown-item{
@@ -837,8 +840,6 @@ ol.breadcrumb {
 .product-details #radioBtn a.btn.active span{
     color: #fff;
 }
-
-
 .object-fit{
     object-fit: cover;
     width: 140px;
